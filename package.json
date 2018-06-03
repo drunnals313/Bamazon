@@ -1,0 +1,26 @@
+{
+  "name": "Bamazon",
+  "version": "1.0.0",
+  "description": "Amazon-like storefront with the MySQL run with node.js",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "inquirer": "^6.0.0",
+    "mysql": "^2.15.0",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drunnals313/Bamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drunnals313/Bamazon/issues"
+  },
+  "homepage": "https://github.com/drunnals313/Bamazon#readme"
+}

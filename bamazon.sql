@@ -20,6 +20,6 @@ VALUES  ('Moldavite', 'Gemstones', 44.44, 111),
 		('Almond Milk', 'Grocery', 3.99, 1000),
 		('Pineapple', 'Grocery', 2.50, 10000),
 		('Toms Toothpaste', 'Personal Care', 2.99, 500),
-		('34 inch Brown Belt', 'Accessories', 20.00, 250)
+		('34 inch Brown Belt', 'Accessories', 20.00, 250);
 
 SELECT * FROM products;

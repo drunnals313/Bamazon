@@ -84,10 +84,10 @@ function displayStock() {
 		var stockList = '';
 		for (var i = 0; i < data.length; i++) {
 			stockList = '';
-			stockList += 'Item ID: ' + data[i].item_id + '  |//|  ';
-			stockList += 'Product Name: ' + data[i].product_name + '  |//|  ';
-			stockList += 'Department Name: ' + data[i].department_name + '  |//|  ';
-            stockList += 'Price: $' + data[i].price + '  |//|  ';
+			stockList += 'Item ID: ' + data[i].item_id + '  ||  ';
+			stockList += 'Product Name: ' + data[i].product_name + '  ||  ';
+			stockList += 'Department Name: ' + data[i].department_name + '  ||  ';
+            stockList += 'Price: $' + data[i].price + '  ||  ';
             stockList += 'Quantity in Stock: ' + data[i].stock_quantity + '\n';
 
 			console.log(stockList);

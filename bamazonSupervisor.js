@@ -3,15 +3,16 @@
 //THIS IS NOT COMPLETE    PLACEHOLDER CODE TO PLAY AROUND WITH HOW TO CREATE THIS CONCEPT
 //THIS IS NOT COMPLETE    PLACEHOLDER CODE TO PLAY AROUND WITH HOW TO CREATE THIS CONCEPT
 
+var inquirer = require('inquirer');
+var mysql = require('mysql');
 
-// Dependencies
-var http = require("http");
-var request = require('request');
-
-var val = process.argv[2];
-
-
-var PORT = 8080;
+var connection = mysql.createConnection({
+	host: 'localhost',
+	port: 3306,
+	user: 'root',
+	password: 'root',
+	database: 'bamazon'
+});
 
 var server = http.createServer(handleRequest);
 

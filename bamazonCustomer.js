@@ -56,7 +56,7 @@ function selectProduct() {
 						if (err) throw err;
 
 						console.log('Your order has been placed! Your total is $' + prodD.price * quantity);
-						console.log('Thank you for shopping with bamazon!');
+						console.log('Thank you for shopping with Bamazon!');
 						console.log("\n--------------------------------------------------------------------------\n");
 
 						connection.end();
@@ -88,11 +88,12 @@ function displayStock() {
 			stockList += 'Product Name: ' + data[i].product_name + '  ||  ';
 			stockList += 'Department Name: ' + data[i].department_name + '  ||  ';
             stockList += 'Price: $' + data[i].price + '  ||  ';
-            stockList += 'Quantity in Stock: ' + data[i].stock_quantity + '\n';
+            stockList += 'Quantity in Stock: ' + data[i].stock_quantity;
 
-			console.log(stockList);
+            console.log('=================================================================================================================================================');
+            console.log(stockList);
 		}
-
+        console.log('=================================================================================================================================================\n');
         console.log("\n--------------------------------------------------------------------------\n");
 
 	  	selectProduct();

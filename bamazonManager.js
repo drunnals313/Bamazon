@@ -66,7 +66,7 @@ function displayInventory() {
 			stockList += 'Product Name: ' + data[i].product_name + '  ||  ';
 			stockList += 'Department Name: ' + data[i].department_name + '  ||  ';
 			stockList += 'Price: $' + data[i].price + '  ||  ';
-			stockList += 'Quantity: ' + data[i].stock_quantity + '\n';
+			stockList += 'Quantity: ' + data[i].stock_quantity;
             console.log('==========================================================================================================================================');
 			console.log(stockList);
 		}
@@ -168,9 +168,9 @@ function addProduct() {
 				
 				connection.query(updateQueryStr, function(err, data) {
 					if (err) throw err;
-                    console.log('==========================================================================================================================================');
+                    console.log('==========================================================================');
                     console.log('Stock count for Item ID ' + item + ' has been updated to ' + (productData.stock_quantity + addQ) + '.');
-                    console.log('==========================================================================================================================================');
+                    console.log('==========================================================================');
 					console.log("\n---------------------------------------------------------------------\n");
 
 					connection.end();
@@ -206,19 +206,20 @@ function createNewProduct() {
 			validate: checkSelection
 		}
 	]).then(function(input) {
-        console.log('==========================================================================================================================================');
+        console.log('==========================================================================');
 		console.log('Adding New Item to Inventory: \n    product_name = ' + input.product_name + '\n' +  
 									   '    department_name = ' + input.department_name + '\n' +  
 									   '    price = ' + input.price + '\n' +  
 									   '    stock_quantity = ' + input.stock_quantity);
-        console.log('==========================================================================================================================================');
+        console.log('==========================================================================');;
 		var queryStr = 'INSERT INTO products SET ?';
 
 		connection.query(queryStr, input, function (error, results, fields) {
 			if (error) throw error;
-
+            console.log('==========================================================================');;
 			console.log('New product has been added to the inventory under Item ID ' + results.insertId + '.');
-			console.log("\n---------------------------------------------------------------------\n");
+            console.log('==========================================================================');
+            console.log("\n---------------------------------------------------------------------\n");
 
 			connection.end();
 		});

@@ -99,11 +99,12 @@ function viewLowInventory() {
 			stockList += 'Product Name: ' + data[i].product_name + '  ||  ';
 			stockList += 'Department: ' + data[i].department_name + '  ||  ';
 			stockList += 'Price: $' + data[i].price + '  ||  ';
-			stockList += 'Quantity: ' + data[i].stock_quantity + '\n';
-
+            stockList += 'Quantity: ' + data[i].stock_quantity;
+            
+            console.log('=================================================================================================================================================');
 			console.log(stockList);
 		}
-
+        console.log('=================================================================================================================================================\n');
 	  	console.log("---------------------------------------------------------------------\n");
 
 		connection.end();

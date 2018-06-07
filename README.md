@@ -15,4 +15,4 @@
 *Copy the text from this repository's bamazon.sql file, paste it into the mySQL program, and run to create a bamazon database and initial products table with data.
 *Update the bamazonCustomer.js and bamazonManager.js files with your password.
 *In the command terminal, navigate to the folder you cloned this repository's code to.
-*In the command terminal, type "node bamazonCustomer" or "node bamazonManager" to play with bamazon store front.
+*In the command terminal, type "node bamazonCustomer" or "node bamazonManager" ("bamazonSupervisor is not built out yet) to play with bamazon store front.

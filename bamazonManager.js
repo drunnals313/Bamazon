@@ -1,8 +1,3 @@
-//THIS IS NOT COMPLETE    PLACEHOLDER CODE TO PLAY AROUND WITH HOW TO CREATE THIS CONCEPT
-//THIS IS NOT COMPLETE    PLACEHOLDER CODE TO PLAY AROUND WITH HOW TO CREATE THIS CONCEPT
-//THIS IS NOT COMPLETE    PLACEHOLDER CODE TO PLAY AROUND WITH HOW TO CREATE THIS CONCEPT
-//THIS IS NOT COMPLETE    PLACEHOLDER CODE TO PLAY AROUND WITH HOW TO CREATE THIS CONCEPT
-
 var inquirer = require('inquirer');
 var mysql = require('mysql');
 
@@ -28,7 +23,7 @@ function displayActions() {
 				} else if (val === 'View Low Inventory') {
 					return 'lowInventory';
 				} else if (val === 'Add to Inventory') {
-					return 'addInventory';
+					return 'addProduct';
 				} else if (val === 'Add New Product') {
 					return 'newProduct';
 				} else {
@@ -43,8 +38,8 @@ function displayActions() {
 			displayInventory();
 		} else if (input.option === 'lowInventory') {
 			viewLowInventory();
-		} else if (input.option === 'addInventory') {
-			addInventory();
+		} else if (input.option === 'addProduct') {
+			addProduct();
 		} else if (input.option === 'newProduct') {
 			createNewProduct();
 		} else {
@@ -72,10 +67,10 @@ function displayInventory() {
 			stockList += 'Department Name: ' + data[i].department_name + '  ||  ';
 			stockList += 'Price: $' + data[i].price + '  ||  ';
 			stockList += 'Quantity: ' + data[i].stock_quantity + '\n';
-
+            console.log('==========================================================================================================================================');
 			console.log(stockList);
 		}
-
+        console.log('==========================================================================================================================================');
 	  	console.log("---------------------------------------------------------------------\n");
 
 		connection.end();
@@ -101,10 +96,10 @@ function viewLowInventory() {
 			stockList += 'Price: $' + data[i].price + '  ||  ';
             stockList += 'Quantity: ' + data[i].stock_quantity;
             
-            console.log('=================================================================================================================================================');
+            console.log('==========================================================================================================================================');
 			console.log(stockList);
 		}
-        console.log('=================================================================================================================================================\n');
+        console.log('==========================================================================================================================================\n');
 	  	console.log("---------------------------------------------------------------------\n");
 
 		connection.end();
@@ -133,7 +128,7 @@ function validateNumeric(value) {
 	}
 }
 
-function addInventory() {
+function addProduct() {
 	
 	inquirer.prompt([
 		{
@@ -162,7 +157,7 @@ function addInventory() {
 
 			if (data.length === 0) {
 				console.log('ERROR: Invalid Item ID. Please select a valid Item ID.');
-				addInventory();
+				addProduct();
 
 			} else {
 				var productData = data[0];
@@ -173,8 +168,9 @@ function addInventory() {
 				
 				connection.query(updateQueryStr, function(err, data) {
 					if (err) throw err;
-
-					console.log('Stock count for Item ID ' + item + ' has been updated to ' + (productData.stock_quantity + addQ) + '.');
+                    console.log('==========================================================================================================================================');
+                    console.log('Stock count for Item ID ' + item + ' has been updated to ' + (productData.stock_quantity + addQ) + '.');
+                    console.log('==========================================================================================================================================');
 					console.log("\n---------------------------------------------------------------------\n");
 
 					connection.end();
@@ -210,12 +206,12 @@ function createNewProduct() {
 			validate: checkSelection
 		}
 	]).then(function(input) {
-
+        console.log('==========================================================================================================================================');
 		console.log('Adding New Item to Inventory: \n    product_name = ' + input.product_name + '\n' +  
 									   '    department_name = ' + input.department_name + '\n' +  
 									   '    price = ' + input.price + '\n' +  
 									   '    stock_quantity = ' + input.stock_quantity);
-
+        console.log('==========================================================================================================================================');
 		var queryStr = 'INSERT INTO products SET ?';
 
 		connection.query(queryStr, input, function (error, results, fields) {
